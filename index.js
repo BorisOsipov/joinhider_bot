@@ -10,7 +10,7 @@ const deleteMessage = async (tgMessage) => {
             console.log(`delete join message ${tgMessage.chat.id}`)
         }
     } catch (e) {
-        console.error(e);
+        console.error(e.message);
     }
 };
 
@@ -19,7 +19,7 @@ const deleteJoin = async (tgMessage) => {
         await bot.deleteMessage(tgMessage.chat.id, tgMessage.message_id.toString());
         console.log(`delete join ${tgMessage.chat.id}`)
     } catch (e) {
-        console.error(e);
+        console.error(e.message);
     }
 };
 
