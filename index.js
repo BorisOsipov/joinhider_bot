@@ -5,7 +5,7 @@ const bot = new TelegramBot(token, { polling: true });
 
 const deleteMessage = async (tgMessage) => {
     try {
-        if (!tgMessage.new_chat_members) {
+        if (tgMessage.new_chat_members) {
             await bot.deleteMessage(tgMessage.chat.id, tgMessage.message_id.toString());
             console.log(`delete join message ${tgMessage.chat.id}`)
         }
